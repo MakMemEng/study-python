@@ -1,10 +1,11 @@
 import sqlalchemy
 import sqlalchemy.orm
-from sqlalchemy.ext.declarative import DeclarativeBase
+from sqlalchemy.ext import declarative
 
-engine = sqlalchemy.create_engine("sqllite:///:memory:", echo=True)
+engine = sqlalchemy.create_engine("sqlite:///test_sqlite2", echo=True)
+# engine = sqlalchemy.create_engine("sqllite:///:memory:", echo=True)
 
-Base = DeclarativeBase()
+Base = declarative.declarative_base()
 
 
 class Person(Base):
