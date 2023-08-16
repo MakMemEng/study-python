@@ -2,7 +2,10 @@ import sqlalchemy
 import sqlalchemy.orm
 from sqlalchemy.ext import declarative
 
-engine = sqlalchemy.create_engine("sqlite:///test_sqlite2", echo=True)
+engine = sqlalchemy.create_engine(
+    "mysql+pymysql:///test_mysql_database2", echo=True
+)
+# engine = sqlalchemy.create_engine("sqlite:///test_sqlite2", echo=True)
 # engine = sqlalchemy.create_engine("sqllite:///:memory:", echo=True)
 
 Base = declarative.declarative_base()
